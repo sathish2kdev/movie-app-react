@@ -1,0 +1,119 @@
+.carsoal-coniner-set{
+    width: 95%;
+    height: 500px;
+    max-width: 95%;
+    margin:auto;
+    box-sizing: border-box;
+    /* background-color: rgb(48, 48, 253); */
+    /* background-color: #030b17 */
+    /* background-color: linear-grad  rgb(27, 71, 112); */
+    background: linear-gradient( rgb(39, 39, 99), rgb(21, 21, 52), rgb(9, 9, 19));
+    /* background-color: brown; */
+}
+
+
+.carasol-img-scroll{
+    margin: 0 !important;
+    /* margin: -32px auto !important; */
+    width: 100%;
+    max-width: 1263px;
+    height: 498px;
+    border: 4px solid rgb(16, 15, 15);
+    object-fit: fill;
+    /* background-size: 100% 100%; */
+    /* border-radius: 16px; */
+}
+
+.carousel-indicators{
+    display: none !important;
+    padding: 0 !important;
+    margin:0 !important;
+    z-index: 0 !important;
+}
+
+.content{
+    width: 80% !important ;
+    margin: auto;
+    margin-right: 20px;
+}
+.content p{
+    /* margin-left: 20px; */
+    text-align: left;
+
+}
+
+.content .name{
+    color: white;
+    font-size: 42px;
+    font-weight: 600;
+    margin: 0;
+    margin-bottom: -15px;
+}
+
+.content .detials span{
+    margin:0px 8px 0px 0px;
+    /* color: white;    */
+    color:rgb(205, 202, 202);
+    font-family: sans-serif;
+    font-size: 15px !important;
+    font-weight: 530;
+}
+
+.content .description{
+    color: white;
+    font-size: 16px;
+    font-weight: 350;
+    overflow-wrap: break-word;
+    letter-spacing: 1px;
+}
+
+
+
+.carousel-control-prev{
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between !important;
+    width: 15%;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+
+.carousel-control-prev {
+    left: 20px !important;
+}
+
+.carousel-control-next {
+    position: absolute;
+    top: 0;
+   
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    width: 4% !important;
+    justify-content: space-between !important;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
+
+.carousel-control-prev-icon , .carousel-control-next-icon{
+    padding: 25px !important;  
+    /* width: 20% !important; */
+}
+span span{
+    width: 100%;
+}

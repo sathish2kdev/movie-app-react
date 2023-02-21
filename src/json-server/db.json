@@ -1,0 +1,155 @@
+{
+  "login-details": [
+    {
+      "userName": "Sathish",
+      "password": "12345"
+    }
+  ],
+  "carsouel-content": [
+    {
+      "programName": "Top Movies",
+      "path":"/images/Movie/header/content-0"
+    },
+    {
+      "programName": "Top Movies",
+      "path":"/images/Movie/header/content-1"
+    },
+    {
+      "programName": "Expandables",
+      "language": "English",
+      "genre": "Action",
+      "year": "2010",
+      "description": "",
+      "path":"/images/Movie/header/Expandable"
+    },
+    {
+      "programName": "Extraction",
+      "language": "English",
+      "genre": "Action",
+      "year": "2020",
+      "description": "",
+      "path":"/images/Movie/header/Extraction"
+    },
+    {
+      "programName": "Avatar 2",
+      "language": "English",
+      "genre": "Since Fiction",
+      "year": "2022",
+      "description": "Former Marine Jake Sully is deployed as an Avatar on a mission to Pandora but, he ultimately finds himself torn between two worlds.",
+      "path":"/images/Movie/header/Avatar-2"
+    }
+  ],
+  "topic-content": [
+    {
+      "topic": "Action Movies",
+      "contentData": [
+        {
+          "name": "London Has Fallen",
+          "path":"/images/Movie/ActionMovies/LondonHasFallen"
+        },
+        {
+          "name": "Mission Impossible Fallout",
+          "path":"/images/Movie/ActionMovies/Mission Impossible Fallout"
+        },
+        {
+          "name": "The Gray Man",
+          "path":"/images/Movie/ActionMovies/The Gray Man"
+        },
+        {
+          "name": "Extraction",
+          "path":"/images/Movie/ActionMovies/Extraction"
+        },
+        {
+          "name": "Olympus Has Fallen",
+          "path":"/images/Movie/ActionMovies/Olympus Has Fallen"
+        },
+        {
+          "name": "Expandables",
+          "path":"/images/Movie/ActionMovies/Expandables"
+        },
+        {
+          "name": "6 Underground",
+          "path":"/images/Movie/ActionMovies/6 Underground"
+        },
+        {
+          "name": "Bullet Train",
+          "path":"/images/Movie/ActionMovies/Bullet Train"
+        }
+      ]
+    },
+    {
+      "topic": "Marvel Movies",
+      "contentData": [
+        {
+          "name": "Avengers",
+          "path":"/images/Movie/Marvel Movies/Avengers"
+        },
+        {
+          "name": "Avengers Age Of Ultron",
+          "path":"/images/Movie/Marvel Movies/Avengers Age Of Ultron"
+        },
+        {
+          "name": "Avengers Infinity War",
+          "path":"/images/Movie/Marvel Movies/Avengers Infinity War"
+        },
+        {
+          "name": "Avenger End Game",
+          "path":"/images/Movie/Marvel Movies/Avenger End Game"
+        },
+        {
+          "name": "Iron Man",
+          "path":"/images/Movie/Marvel Movies/Iron Man"
+        },
+        {
+          "name": "Thor",
+          "path":"/images/Movie/Marvel Movies/Thor"
+        },
+        {
+          "name": "Capitan America Civil War",
+          "path":"/images/Movie/Marvel Movies/Capitan America Civil War"
+        },
+        {
+          "name": "Thor Ragnarok",
+          "path":"/images/Movie/Marvel Movies/Thor Ragnarok"
+        }
+      ]
+    },
+    {
+      "topic": "Top Favorite Movies",
+      "contentData": [
+        {
+          "name": "Avatar",
+          "path":"/images/Movie/Top Favourite Movies/Avatar"
+        },
+        {
+          "name": "Geostrom",
+          "path":"/images/Movie/Top Favourite Movies/Geostrom"
+        },
+        {
+          "name": "Harry Potter and the Deathly Hallows Part 2",
+          "path":"/images/Movie/Top Favourite Movies/Harry Potter and the Deathly Hallows Part 2"
+        },
+        {
+          "name": "Interstellar",
+          "path":"/images/Movie/Top Favourite Movies/Interstellar"
+        },
+        {
+          "name": "Sherlock Holmes",
+          "path":"/images/Movie/Top Favourite Movies/Sherlock Holmes"
+        },
+        {
+          "name": "Top Gun Maverick",
+          "path":"/images/Movie/Top Favourite Movies/Top Gun Maverick"
+        },
+        {
+          "name": "Mechanic Resurrection",
+          "path":"/images/Movie/Top Favourite Movies/Mechanic Resurrection"
+        },
+        {
+          "name": "Inception",
+          "path":"/images/Movie/Top Favourite Movies/Inception"
+        }
+      ]
+    }
+  ]
+}
