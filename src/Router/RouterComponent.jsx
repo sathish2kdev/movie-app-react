@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import Categorypage from "../components/CategoryPage";
 import Create from "../components/CRUD/Create";
 import DashBoardPage from "../components/DashBoardPage";
 import Login from "../components/Login";
@@ -14,7 +15,8 @@ const RouterComponent = () => {
             <Route path="/Login" element={<Login />} />
             <Route path="/"  element={<DashBoardPage />} />
             <Route path="/viewContent/:category" element={<ViewCardContainer />} />
-            <Route path="/SingleContentViewPage/:name" element={<SingleContentViewPage />} />
+            <Route path="/SingleContentViewPage" element={<SingleContentViewPage />} />
+            {/* <Route path="/" element={<Categorypage />} /> */}
         </Routes>
         </>
     )

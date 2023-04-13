@@ -1,5 +1,5 @@
 import axios from "axios"
-import { baseUrl, baseUrl1, carasouelApi, ContentBasedOnCategory, headerContent, loginURl, saveFormUrl, TopicBasedContent } from "../urlConstant"
+import { baseUrl, baseUrl1, carasouelApi, ContentBasedOnCategory, getCategorywithContent, headerContent, loginURl, saveFormUrl, TopicBasedContent } from "../urlConstant"
 import { CATEGORY_BASED_CONTNENT, GET_USER_FORM_RESPONSE, HEADER_CONTENT_ACTION, LOGIN_ACTION_SUBMIT, SAVE_USER_FORM_RESPONSE, TOPIC_CONTENT_ACTION } from "./actionType"
 
 
@@ -54,9 +54,13 @@ export const headerConentCarasoel = () => {
 }
 
 export const getTopicBasedContent = () => {
-    let link = baseUrl+TopicBasedContent;
+    let link = baseUrl1+getCategorywithContent;
     return function(dispatch){
-        axios.get(link)
+        const headers={
+            "Authorization":`Bearer ${localStorage.getItem("AuthToken")}`,
+            "content-type":"application/json"
+       }
+        axios.get(link,{"headers":headers})
                 .then((data) => {
                     dispatch(TopicbasedContentAction(data))
                 }).catch((errResp) => {
@@ -64,6 +68,18 @@ export const getTopicBasedContent = () => {
                 })
     }
 }
+
+// export const getTopicBasedContent = () => {
+//     let link = baseUrl+TopicBasedContent;
+//     return function(dispatch){
+//         axios.get(link)
+//                 .then((data) => {
+//                     dispatch(TopicbasedContentAction(data))
+//                 }).catch((errResp) => {
+//                     dispatch(TopicbasedContentAction(errResp))
+//                 })
+//     }
+// }
 
 
 export const getAllCategorybasedData = (content) => {
@@ -76,6 +92,10 @@ export const getAllCategorybasedData = (content) => {
                 })
     }
 }
+
+
+// export const getContentDetailsData = ()
+
 
 ////////
 export const SaveUserFormReposne = (response) => ({
@@ -98,4 +118,6 @@ export const SaveUserForm = (data) => {
     
     }
 }
+
+
 

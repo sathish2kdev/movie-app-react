@@ -16,7 +16,7 @@
     overflow-x: auto;
     flex-direction: row;
     flex-wrap: wrap;
-    gap:40px 20px;
+    gap:45px 25px;
     justify-content: left;
     align-items: flex-start;
 }

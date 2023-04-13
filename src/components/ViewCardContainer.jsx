@@ -15,7 +15,8 @@ const ViewCardContainer  = () => {
     const selector = useSelector((store) => store.categoryContent.data);
 
       useEffect(() => {
-        dispatch(getAllCategorybasedData(category));
+        console.log("Action");
+       dispatch(getAllCategorybasedData(category));
       },[]);
 
     const SetContentDataFunction  = () => {

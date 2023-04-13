@@ -12,6 +12,7 @@
 }
 
 .card-data{
+    
     width: 15%;
     width:250px; 
     max-width:250px; 
@@ -23,16 +24,19 @@
 }
 .card-body{
     margin: 0 !important;
-    display: flex;
     overflow-x: visible;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
 }
 .card-data .card-img{
     position: relative;
-    /* top: 0; */
     z-index: 1;
     width: 100%;
     height: 330px;
     max-width: 225px;
+    min-width: 200px;
     object-fit: cover;
     border: none;
     border-radius: 5px;

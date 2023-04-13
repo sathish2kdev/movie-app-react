@@ -1,24 +1,123 @@
 .view-card-conatiner{
-    background-color: azure;
+    /* background-color: rgb(9, 18, 67); */
     width: 100%;
-    height: 670px;
+    height: 645px;
     margin: 0;
-    border: 2px solid blue;
+    border: 2px solid rgb(0, 0, 0);
+    background-color: black;
+    /* background: linear-gradient( rgb(0, 0, 0), rgb(16, 16, 25), rgb(253, 253, 254)); */
+    align-items: stretch;
 }
+.view-card-conatiner p{
+    margin: 0;
+    color: white !important;
+    font-family: serif;
+    font-weight: 450;
+    font-size: 15px;
+    margin: 20px !important;
+}
+
+.view-card-conatiner p.text-app-name{
+    font-size: 35px;
+    font-weight: 550;
+    text-align: left;
+}
+
+.view-card-conatiner p,span{
+    text-align: left;
+    margin: -20px 0px;
+}
+
+.view-card-conatiner p.text-app-det{
+    font-size: 25px;
+    margin: 10px !important;
+    text-align: left;
+}
+
 
 .seperation-information{
     display: flex;
     flex-direction: row;
     align-items: stretch;
     flex-wrap: nowrap;
-    gap: 50px;
+    /* gap: 50px; */
     width: 100%;
     height: 650px;
 }
 
 .single-load-img{
-    height: 100%;
+    height: 73%;
+    margin-right: 10px;
     /* width: 100%; */
     object-fit: cover;
     /* max-width: 350px; */
+}
+
+.content-head {
+    width: 100%;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    /* padding: 0px -200px; */
+
+}
+.content-head div{
+    margin-top: -20px;
+    display: inline-flex;
+}
+
+.content-head div p{
+    color: #cbc6c6 !important;
+
+}
+
+.content-head .space-head{
+
+    /* justify-content: space-between; */
+    margin-right: -60px !important;
+}
+
+.popularity{
+    display: block !important;
+}
+
+.ratinghead{
+    margin: 0 !important;
+    font-size: 20px !important;
+    /* font-weight: 50; */
+}
+
+.headdet {
+     /* margin: 0 !important; */
+    font-size: 22px !important;
+    /* margin-right: -30px !important; */
+}
+
+.popularity .ratingvalue{
+    margin: -10px 0px 0px 40px !important;
+    font-size: 17px;
+}
+
+.popularity img{
+    margin-top: -5px;
+}
+
+.rect{
+    display: block;
+}
+.rectangle-box{
+   margin: 12px 10px 0px;
+    padding: 54px 80px;
+    background-color: rgb(78, 79, 79);
+    /* width: 100%;
+    height: 20%; */
+}
+.svg-video{
+    margin-bottom: 10px;
+}
+
+.play-video{
+    width: 100%;
+    height: 100%;
 }

@@ -59,7 +59,6 @@ const Carosalpage = () => {
                     <div className="row">
                       <div className="py-5 my-4 px-5 col-lg-4">
                         <div className="content">
-                          <h1>Hi</h1>
                           <p className="name">{data.contentName}</p>
                           {/* <p className="name">{data.programName}</p> */}
                           <ContenteDetails data={data} />
