@@ -13,7 +13,7 @@ const CardContent = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getTopicBasedContent());
+        dispatch(getTopicBasedContent(localStorage.getItem("category")));
     },[]);
 
     
@@ -25,8 +25,11 @@ const CardContent = () => {
     };
     
     const navigateSearch = useNavigateSearch();
-    const goToPosts = (category,name) =>
-    navigateSearch('/SingleContentViewPage', { category: category, name: name });
+    const goToPosts = (category,name) =>{
+      localStorage.setItem("category",category);
+      navigateSearch('/SingleContentViewPage', { category: category, name: name });
+    }
+   
 
     // const goToPosts = () =>
     // navigate({
@@ -51,7 +54,7 @@ const CardContent = () => {
                     onClick={() => navigate(`/viewContent/${data.category}`)}
                   >
                     <p className="content-header mx-0">
-                      {data.category}
+                      {data.hiddenCategory? data.hiddenCategory:data.category}
                       <span>
                         <svg
                           xmlns="http://www.w3.org/2000/svg"

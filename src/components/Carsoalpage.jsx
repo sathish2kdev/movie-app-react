@@ -14,6 +14,7 @@ const Carosalpage = () => {
     const selector = useSelector((store) => store.headerMovieDisplay.data);
     useEffect(() =>  {
         dsipatch(headerConentCarasoel());
+        localStorage.setItem("category","");
     },[])
 
     console.log(selector);

@@ -80,7 +80,7 @@
     color: grey;
     font-size: 13px;
     font-weight: 500;
-    margin-top: 3px !important;
+    margin-top: -15px !important;
 }
 
 .Login-card .check-remember{
@@ -113,7 +113,7 @@
 .remeber-check{
     display: flex;
     justify-content: space-between;
-    margin: -15px 20px;
+    margin: 15px 30px;
 }
 input[type="checkbox"].check-remember:checked + .check-remember {
     border-color: red;

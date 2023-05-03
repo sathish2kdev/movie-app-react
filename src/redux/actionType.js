@@ -6,6 +6,9 @@ export const TOPIC_CONTENT_ACTION="Topic content action"
 
 export const CATEGORY_BASED_CONTNENT = "category Based Mpvies&Shows";
 
+
+export const CONTENT_DETIALS = "Content Based Details";
+
 //////
 export const SAVE_USER_FORM_RESPONSE = "Save Form Details Response";
 

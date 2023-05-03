@@ -13,6 +13,7 @@ const ViewCardContainer  = () => {
 
     const dispatch = useDispatch();
     const selector = useSelector((store) => store.categoryContent.data);
+    console.log(selector);
 
       useEffect(() => {
         console.log("Action");

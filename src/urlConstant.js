@@ -15,6 +15,6 @@ export const baseUrl1 = "http://localhost:8080";
 export const loginURl = "/auth/v1/login?username="
 
 export const carasouelApi ="/api/dashboard/v1/getCarsoelDetails";
-export const getCategorywithContent = "/api/dashboard/v1/categorybasedcontent";
+export const getCategorywithContent = "/api/dashboard/v1/categorybasedcontent?category=";
 
-export const getContentDetailsdata = "/api/dashboard/v1/getContentDetails";
+export const getContentDetailsdata = "/api/dashboard/v1/getContentDetails?applicantname=";

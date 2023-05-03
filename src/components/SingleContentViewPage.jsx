@@ -5,84 +5,82 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 // import ViewCardContainer from "./ViewCardContainer";
 import CardContent from "./CardContent";
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import ReactPlayer from 'react-player/youtube'
 import { findDOMNode } from "react-dom";
+import { getContentDetailsData } from "../redux/action";
+import "../assets/css/CardContent.css";
 // import { toast } from 'react-toastify';
 
 const SingleContentViewPage = () => {
   const [searchParams] = useSearchParams();
 
-  const [state, setState] = useState("");
+  const dispatch = useDispatch();
 
-  const [name, setName] = useState("");
-
-  const [contentData, setContentData] = useState();
-
-  const loopFunction = () => {
-    let arrayData = selector.responseData;
-    for (let a = 0; arrayData != null && a < arrayData.length; a++) {
-      if (arrayData[a].category != null && arrayData[a].category === state) {
-        console.log("hello");
-        for (let x = 0; x < arrayData[a].information.length; x++) {
-          if (arrayData[a].information[x].applicationName === name) {
-            console.log(arrayData[a].information[x]);
-            setContentData(arrayData[a].information[x]);
-            break;
-          }
-        }
-      }
-    }
-  };
+  const contentDetial = useSelector((store) => store.contentdata);
+  console.log(contentDetial);
+  // const loopFunction = () => {
+  //   let arrayData = selector.responseData;
+  //   for (let a = 0; arrayData != null && a < arrayData.length; a++) {
+  //     if (arrayData[a].category != null && arrayData[a].category === state) {
+  //       console.log("hello");
+  //       for (let x = 0; x < arrayData[a].information.length; x++) {
+  //         if (arrayData[a].information[x].applicationName === name) {
+  //           console.log(arrayData[a].information[x]);
+  //           setContentData(arrayData[a].information[x]);
+  //           break;
+  //         }
+  //       }
+  //     }
+  //   }
+  // };
 
   const selector = useSelector((store) => store.topicContent.data);
+  console.log(selector);
   useEffect(() => {
-    if (
-      searchParams.get("category") != null &&
-      searchParams.get("category") != ""
-    ) {
-      let val = searchParams.get("category");
-      setState(val);
-    }
+   
     if (searchParams.get("name") != null && searchParams.get("name") != "") {
       let name = searchParams.get("name");
-      setName(name);
+      // setName(name);
+      dispatch(getContentDetailsData(name))
     }
-    // if(selector != null){
-    //   loopFunction();
-    // }
+    
   }, []);
-
-  useEffect(() => {
-    if (selector != null) loopFunction();
-  }, [selector]);
 
 
   const ContenteDetailsDisplay = ({data}) => {
+    console.log(data);
       return (
         <>
-        <div className="content-head">
-          <div className="space-head">
-          <p className="headdet">{data.categoryType}</p>
-        <p className="headdet">{data.yearOfReleasing}</p>
-        <p className="headdet">124 m</p>
+          <div className="content-head">
+            <div className="space-head">
+              <p className="headdet">{data.categoryType}</p>
+              <p className="headdet">{data.yearOfReleasing}</p>
+              <p className="headdet">124 m</p>
+            </div>
+            <div>
+              <div className="popularity">
+                <p className="ratinghead">IMDB Rating</p>
+                <p className="ratingvalue">
+                  89{" "}
+                  <img
+                    width={30}
+                    src={require("../assets/images/svg/star-icon.jpg")}
+                    alt=""
+                  />
+                </p>
+              </div>
+              <div className="popularity">
+                <p className="ratinghead">Your Rating </p>
+                <p className="ratingvalue">89 </p>
+              </div>
+              <div className="popularity">
+                <p className="ratinghead">Popularity </p>
+                <p className="ratingvalue">8</p>
+              </div>
+            </div>
           </div>
-        <div>
-        <div className="popularity">
-        <p className="ratinghead">IMDB Rating</p>
-        <p className="ratingvalue">89 <img width={30}  src={require("../assets/images/svg/star-icon.jpg")} alt="" /></p></div>
-        <div className="popularity">
-        <p className="ratinghead">Your Rating </p>
-        <p className="ratingvalue">89 </p>
-        </div>
-        <div className="popularity">
-        <p className="ratinghead">Popularity </p>
-        <p className="ratingvalue">8</p>
-        </div>
-        </div>
-
-        </div>
-       </>
+        </>
       );
   }
 
@@ -106,24 +104,27 @@ const SingleContentViewPage = () => {
               <Header />
             </div>
             <div className="body-page px-2">
-              <div className="col-lg-11 col-md-11 col-11 mx-auto my-5 px-5">
-                {contentData != null ? (
-                  <div className="view-card-conatiner">
+              {/* <div className="col-lg-11 col-md-11 col-11 mx-auto my-5 px-5"> */}
+                 {contentDetial ? (
+                   <div className="col-lg-11 col-md-11 col-11 mx-auto my-5 px-5">
+                    <div className="view-card-conatiner">
                     <p className="text-app-name">
-                      {contentData.applicationName}
+                      {contentDetial.applicationName}
                     </p>
-                    <ContenteDetailsDisplay data={contentData} />
+                    <ContenteDetailsDisplay data={contentDetial} />
                     <div className="seperation-information mt-1">
-                      <LazyLoadImage
+                      {contentDetial.imgPath ?   <LazyLoadImage
                         className="single-load-img"
-                        src={require(`../assets${contentData.imgPath}.jpg`)}
+                        src={require(`../assets${contentDetial.imgPath}.jpg`)}
                         alt={`data`}
-                      />
+                      />  :""}
+                    
                       <ReactPlayer
                       	ref={ref}
                         width="65%"
                         height="73%"
-                        url="https://www.youtube.com/watch?v=gOW_azQbOjw"
+                        url={contentDetial.link}
+                        // url="https://www.youtube.com/watch?v=gOW_azQbOjw"
                         playing
                         muted
                         config={{
@@ -136,7 +137,7 @@ const SingleContentViewPage = () => {
                       />
                       <div className="rect">
                       <div className="rectangle-box">
-                      <svg onClick={playVideo} xmlns="http://www.w3.org/2000/svg" width="100" height="68" fill="currentColor" class="bi bi-caret-right-square-fill svg-video" viewBox="0 0 16 16">
+                      <svg onClick={() =>playVideo} xmlns="http://www.w3.org/2000/svg" width="100" height="68" fill="currentColor" class="bi bi-caret-right-square-fill svg-video" viewBox="0 0 16 16">
   <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm5.5 10a.5.5 0 0 0 .832.374l4.5-4a.5.5 0 0 0 0-.748l-4.5-4A.5.5 0 0 0 5.5 4v8z"/>
 </svg>
                   <h3>Play</h3>
@@ -152,11 +153,31 @@ const SingleContentViewPage = () => {
   
                       <div></div>
                     </div>
+                    <p className="text-app-content px-2">Story Line<span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="25"
+                                height="30"
+                                fill="currentColor"
+                                className="bi bi-chevron-right"
+                                viewBox="0 0 16 16"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+                                />
+                              </svg>
+                            </span>
+                          </p>
+                          <p className="storyline">{contentDetial.description}</p>
+                          <p className="text-app-content pt-3 px-2">Genres <span className="types">{contentDetial.genreCategory}</span></p>
                   </div>
+</div>
+                  
                 ) : (
                   ""
                 )}
-              </div>
+              {/* </div> */}
               <CardContent />
             </div>
           </div>

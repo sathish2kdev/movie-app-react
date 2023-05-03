@@ -1,4 +1,4 @@
-import { CATEGORY_BASED_CONTNENT, HEADER_CONTENT_ACTION, LOGIN_ACTION_SUBMIT, SAVE_USER_FORM_RESPONSE, TOPIC_CONTENT_ACTION } from "./actionType"
+import { CATEGORY_BASED_CONTNENT, CONTENT_DETIALS, HEADER_CONTENT_ACTION, LOGIN_ACTION_SUBMIT, SAVE_USER_FORM_RESPONSE, TOPIC_CONTENT_ACTION } from "./actionType"
 
 // const initialState= {
 //     saveReponseDetail:null
@@ -8,7 +8,8 @@ const initialState= {
     loginValidate:null,
     headerMovieDisplay:[],
     topicContent:[],
-    categoryContent:[]
+    categoryContent:[],
+    contentdata:{}
 }
 
 export const reducer = (state=initialState,action) => {
@@ -36,6 +37,11 @@ export const reducer = (state=initialState,action) => {
                 return {
                     ...state,
                     categoryContent:action.payload
+                }
+            case CONTENT_DETIALS : 
+                return {
+                    ...state,
+                    contentdata:action.payload
                 }
         default: 
         return state;
